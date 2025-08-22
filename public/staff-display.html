@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Staff Directory</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 40px;
+      margin: 20px 0 40px;
+      color: #2c3e50;
+    }
+
+    #staffContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .staff-card {
+      background-color: #fff;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      padding: 20px;
+      width: 100%;
+      max-width: 600px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .staff-card:hover {
+      transform: scale(1.02);
+    }
+
+    .staff-info {
+      margin-bottom: 20px;
+    }
+
+    .staff-info strong {
+      display: inline-block;
+      width: 130px;
+      color: #555;
+    }
+
+    .action-buttons {
+      text-align: right;
+    }
+
+    .action-buttons button {
+      margin-left: 10px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .update-btn {
+      background-color: #3498db;
+      color: white;
+    }
+
+    .delete-btn {
+      background-color: #e74c3c;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Hotel Staff Directory</h1>
+  <div id="staffContainer">Loading staff data...</div>
+
+  <script>
+    fetch('http://localhost:3000/staff')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('staffContainer');
+        container.innerHTML = '';
+        data.forEach(staff => {
+          container.innerHTML += `
+            <div class="staff-card">
+              <div class="staff-info">
+                <strong>ID:</strong> ${staff.Id}<br>
+                <strong>Name:</strong> ${staff.Name}<br>
+                <strong>Gender:</strong> ${staff.Gender}<br>
+                <strong>DOB:</strong> ${staff.DateOfBirth}<br>
+                <strong>Phone:</strong> ${staff.Phone}<br>
+                <strong>Email:</strong> ${staff.Email}<br>
+                <strong>Address:</strong> ${staff.Address}<br>
+                <strong>Position:</strong> ${staff.Position}
+              </div>
+              <div class="action-buttons">
+                <button class="update-btn" onclick="updateStaff('${staff.Id}')">Update</button>
+                <button class="delete-btn" onclick="deleteStaff('${staff._id}')">Delete</button>
+              </div>
+            </div>
+
+            
+          `;
+        });
+      })
+      .catch(err => {
+        document.getElementById('staffContainer').innerHTML = 'Error loading staff data.';
+        console.error('Fetch error:', err);
+      });
+
+    function updateStaff(id) {
+      alert('Update function for Staff ID: ' + id);
+      // Implement actual update logic here
+    }
+
+    function deleteStaff(id) {
+      if (confirm('Are you sure you want to delete staff ID ' + id + '?')) {
+        fetch(`http://localhost:3000/staff/${id}`, {
+          method: 'DELETE'
+        })
+        .then(res => {
+          if (res.ok) {
+            alert('Staff deleted successfully.');
+            location.reload();
+          } else {
+            alert('Error deleting staff.');
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>

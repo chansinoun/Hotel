@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SPS Hotel Room</title>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    header {
+      background-color: #00264d;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom: 4px solid #004080;
+    }
+
+    header img {
+      width: 80px;
+      height: 80px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    header h1 {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      font-size: 32px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav-box {
+      background-color: #004080;
+      padding: 15px 0;
+      box-shadow: inset 0 -3px 6px rgba(0,0,0,0.1);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li a {
+      font-family: 'Times New Roman', Times, serif;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 25px;
+      border: 1px solid #ffffff44;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      font-size: 16px;
+      background-color: #0059b3;
+    }
+
+    nav li a:hover {
+      background-color: #0073e6;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    main h2 {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #00264d;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    button {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #0059b3;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 120px;
+      align-self: center;
+    }
+
+    button:hover {
+      background-color: #003366;
+    }
+
+    footer {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #00264d;
+      color: #e0e0e0;
+      text-align: center;
+      padding: 15px;  
+      font-size: 14px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Master Page Header -->
+  <header>
+    <img src="logo/logo1.png" alt="Hotel Logo">
+    <h1>SPS Hotel Portal</h1>
+  </header>
+
+  <!-- Navigation Bar -->
+  <div class="nav-box">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="room.html">Rooms</a></li>
+        <li><a href="bookingOnline.html">Booking</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li><a href="payment.html">Payment</a></li>
+        <li><a href="service%20customer.html">Service</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Page Content -->
+  <main>
+    <h2>SPS Hotel Room</h2>
+    <form>
+      <div>
+        <label for="roomId">Room ID</label>
+        <input type="text" id="roomId" value="R01">
+      </div>
+
+      <div>
+        <label for="roomNumber">Room Number</label>
+        <input type="text" id="roomNumber" value="A1">
+      </div>
+
+      <div>
+        <label for="roomType">Room Type</label>
+        <select id="roomType">
+          <option>Standard Room</option>
+          <option>Deluxe Room</option>
+          <option>Suite</option>
+          <option>Executive Room</option>
+          <option>Presidential Suite</option>
+          <option>Family Room</option>
+          <option>Accessible Room</option>
+          <option>Triple Room</option>
+          <option>Penthouse</option>
+          <option>Sweet Room</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="price">Price per Night</label>
+        <input type="text" id="price" value="40$">
+      </div>
+
+      <div>
+        <label for="availability">Availability</label>
+        <select id="availability">
+          <option>Free</option>
+          <option>Booked</option>
+          <option>Maintenance</option>
+        </select>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 SPS Hotel. All rights reserved.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hotel Portal</title>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+      margin: 0;       /* removed huge 400px margin */
+      padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    header {
+      background-color: #00264d;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      border-bottom: 4px solid #004080;
+    }
+
+    header img {
+      width: 80px;
+      height: 80px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    header h1 {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      font-size: 32px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav-box {
+      background-color: #004080;
+      padding: 15px 0;
+      box-shadow: inset 0 -3px 6px rgba(0,0,0,0.1);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li a {
+      font-family: 'Times New Roman', Times, serif;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 25px;
+      border: 1px solid #ffffff44;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      font-size: 16px;
+      background-color: #0059b3;
+    }
+
+    nav li a:hover {
+      background-color: #0073e6;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;   /* reduced space above/below main */
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    main h2 {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #00264d;
+    }
+
+    main p {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 8px;   /* reduced gap above button */
+    }
+
+    button {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #0059b3;
+      color: white;
+      padding: 6px 12px;   /* smaller padding inside button */
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #003366;
+    }
+
+    footer {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #00264d;
+      color: #e0e0e0;
+      text-align: center;
+      padding: 15px;  
+      font-size: 14px;
+      margin-top: 20px;   /* reduced gap below main */
+    }
+  .team-card {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  
+}
+
+.member {
+  width: 180px;
+}
+
+.member img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+
+}
+.member img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(244, 8, 189, 0.2);
+}
+.member h2 {
+  font-size: 16px;
+  margin-top: 8px;
+  color: #00264d;
+}
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo/logo1.png" alt="Hotel Logo">
+    <h1>SPS Hotel Portal</h1>
+  </header>
+
+  <div class="nav-box">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="room.html">Rooms</a></li>
+        <li><a href="bookingOnline.html">Booking</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li><a href="payment.html">Payment</a></li>
+        <li><a href="service%20customer.html">Service</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main id="main-content">
+    <img src="../public/logo/logo.png">
+    <h2>Group SV1 Team Member </h2>
+<div class="team-card">
+  <div class="member">
+    <img src=".././public/logo/logo.png" alt="Toch Chanpunlork">
+    <h2>1. Toch Chanpunlork</h2>
+  </div>
+  <div class="member">
+    <img src="../public/logo/bongsamot.JPG" alt="Chum Samot">
+    <h2>2. Chum Samot</h2>
+  </div>
+  <div class="member">
+    <img src="../public/logo/sinoun.jpg" alt="Chan Sinoun">
+    <h2>3. Chan Sinoun</h2>
+  </div>
+</div>
+  
+
+      
+    <p>Welcome to SPS Hotel Portal</p>
+    
+  </main>
+
+  <footer>
+    &copy; 2025 SPS Hotel. All rights reserved.
+  </footer>
+
+  <script>
+    function loadContent(section) {
+      const content = document.getElementById('main-content');
+
+      switch (section) {
+        case 'home':
+          content.innerHTML = `
+            <h2>Welcome to Our Hotel Booking System</h2>
+            <p>Use the navigation bar to explore rooms, make a booking, or manage staff and payments.</p>
+            <button type="submit">Submit Booking</button>
+          `;
+          break;
+        case 'rooms':
+          content.innerHTML = `
+            <h2>Available Rooms</h2>
+            <p>List of rooms and availability info goes here.</p>
+          `;
+          break;
+        case 'booking':
+          content.innerHTML = `
+            <h2>Booking Form</h2>
+            <form>
+              <label>Check-in Date: <input type="date" /></label><br /><br />
+              <label>Check-out Date: <input type="date" /></label><br /><br />
+              <label>Guests: <input type="number" min="1" /></label><br /><br />
+            </form>
+          `;
+          break;
+        case 'staff':
+          content.innerHTML = `
+            <h2>Staff Management</h2>
+            <p>Here you can view and manage hotel staff.</p>
+          `;
+          break;
+        case 'payment':
+          content.innerHTML = `
+            <h2>Payment Page</h2>
+            <p>Integrate your payment gateway here.</p>
+          `;
+          break;
+        default:
+          content.innerHTML = `<p>Section not found.</p>`;
+      }
+    }
+  </script>
+
+</body>
+</html>
